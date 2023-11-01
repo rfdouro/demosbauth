@@ -8,5 +8,15 @@
 </head>
 <body>
  <h1>Tarefa - Página inicial</h1>
+ <table>
+  <thead>
+   <tr><th>Descrição</th></tr>
+  </thead>
+  <tbody>
+   <tr th:each=" t : ${listaTarefas}">
+    <td th:text="${t.descricao}"></td>
+   </tr>
+  </tbody>
+ </table>
 </body>
 </html>
