@@ -10,6 +10,7 @@
 
 <body>
  <h1>Página inicial</h1>
+ <a href="/tarefa">Tarefas</a>
  <div th:if="${session.usuario!=null}">
   <h2>Olá <span th:text="${session.usuario.login}"></span></h2>
   <a href="/login/deslogar">Deslogar</a>
