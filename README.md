@@ -1,4 +1,4 @@
-# Projeto exemplo 
+# Projeto exemplo de cadastro de tarefas
 
 ### Usando filtro de autorizações
 O projeto usa:
