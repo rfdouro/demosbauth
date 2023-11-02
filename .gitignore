@@ -30,7 +30,8 @@ build/
 !**/src/test/**/build/
 
 ### VS Code ###
-.vscode/
+## deixei para levar a configuração de build ##
+# .vscode/
 
 ### diretório de dados ###
 data/

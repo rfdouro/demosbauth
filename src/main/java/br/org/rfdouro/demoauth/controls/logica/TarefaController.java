@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.org.rfdouro.demoauth.data.logica.Tarefa;
-import br.org.rfdouro.demoauth.data.logica.TarefaRepository;
+import br.org.rfdouro.demoauth.dados.logica.Tarefa;
+import br.org.rfdouro.demoauth.dados.logica.TarefaRepository;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
