@@ -1,4 +1,4 @@
-package br.org.rfdouro.demoauth.dados.logica;
+package br.org.rfdouro.demoauth.data.logica;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

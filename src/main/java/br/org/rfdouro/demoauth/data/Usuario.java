@@ -1,4 +1,4 @@
-package br.org.rfdouro.demoauth.dados;
+package br.org.rfdouro.demoauth.data;
 
 import java.util.List;
 

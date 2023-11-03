@@ -10,9 +10,9 @@ import java.util.regex.Pattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import br.org.rfdouro.demoauth.dados.Autorizacao;
-import br.org.rfdouro.demoauth.dados.AutorizacaoRepository;
-import br.org.rfdouro.demoauth.dados.Usuario;
+import br.org.rfdouro.demoauth.data.Autorizacao;
+import br.org.rfdouro.demoauth.data.AutorizacaoRepository;
+import br.org.rfdouro.demoauth.data.Usuario;
 import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

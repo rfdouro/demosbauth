@@ -1,4 +1,4 @@
-package br.org.rfdouro.demoauth.dados;
+package br.org.rfdouro.demoauth.data;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

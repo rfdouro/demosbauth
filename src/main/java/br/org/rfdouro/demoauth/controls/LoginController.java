@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.org.rfdouro.demoauth.dados.Autorizacao;
-import br.org.rfdouro.demoauth.dados.Usuario;
-import br.org.rfdouro.demoauth.dados.UsuarioRepository;
+import br.org.rfdouro.demoauth.data.Autorizacao;
+import br.org.rfdouro.demoauth.data.Usuario;
+import br.org.rfdouro.demoauth.data.UsuarioRepository;
 import jakarta.servlet.http.HttpServletRequest;
 
 @Controller

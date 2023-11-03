@@ -34,7 +34,7 @@ build/
 # .vscode/
 
 ### diretório de dados ###
-data/
+database/
 
 ### arquivo de deploy ###
 *.bat
