@@ -9,4 +9,4 @@ O projeto usa:
 
 
 ## Execução
-![Execução](execucao.gif)
+![Execução](execucao2.gif)
