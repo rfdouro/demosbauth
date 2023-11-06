@@ -9,7 +9,7 @@
 </head>
 <body>
  <h1>Painel Administrativo</h1>
- <a href="/">Página inicial</a>
+ <a href="/">Página inicial</a>&nbsp;<a href="/admin/usuario/cadastro">Cadastro de usuário</a>&nbsp;
  <table style="width:100%">
   <thead>
    <tr><th>Id</th><th style="width:30%">Login</th><th style="width:25%">Senha</th><th style="width:30%">Auths</th></tr>
@@ -21,6 +21,9 @@
      <ul>
       <li th:each="a : ${u.autorizacoes}" th:text="${a.nome}"></li>
      </ul>
+    </td>
+    <td>
+     <a th:href="@{'/admin/usuario/delete/' + ${u.id}}">Excluir</a>
     </td>
    </tr>
   </tbody>

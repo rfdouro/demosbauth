@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.org.rfdouro.demoauth.data.AutorizacaoRepository;
 import br.org.rfdouro.demoauth.data.Usuario;
 import br.org.rfdouro.demoauth.data.UsuarioRepository;
+import br.org.rfdouro.demoauth.data.logica.Tarefa;
 
 @Controller
 @RequestMapping("/admin")
@@ -19,10 +21,25 @@ public class AdminController {
  @Autowired
  UsuarioRepository usuarioRepository;
 
+ @Autowired
+ AutorizacaoRepository autorizacaoRepository;
+
  @GetMapping({ "", "/", "/index" })
  public String admin(Model model) {
   model.addAttribute("listaUsuarios", usuarioRepository.findAll(Sort.by("login")));
   return "admin/index";
+ }
+
+ @GetMapping({ "/usuario/cadastro" })
+ public String abrecadastrousuario(Model model) {
+  model.addAttribute("listaAutorizacoes", autorizacaoRepository.findAll(Sort.by("nome")));
+  return "admin/cadusuario";
+ }
+
+ @PostMapping(value = "/usuario/cadastro", consumes = "application/x-www-form-urlencoded")
+ public String cadastrar(Usuario usuario) {
+  usuarioRepository.save(usuario);
+  return "redirect:/admin";
  }
 
  @GetMapping({ "/usuario/delete/{id}" })

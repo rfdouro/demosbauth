@@ -56,7 +56,7 @@ public class AuthFilter implements Filter {
       return;
     }
 
-    //se precisa de permissão verifica se tem usuário logado
+    // se precisa de permissão verifica se tem usuário logado
     if (usuLogado != null) {
       Usuario u = (Usuario) usuLogado;
       if (u.getAutorizacoes() != null)
@@ -70,14 +70,13 @@ public class AuthFilter implements Filter {
             System.out.println("ok aqui");
             chain.doFilter(request, response);
             return;
-          } else {
-            request.getRequestDispatcher("/naoautorizado").forward(request, response);
-            return; //recusa a navegação e direciona para a página naoautorizado
           }
         }
+      request.getRequestDispatcher("/naoautorizado").forward(request, response);
+      return; // recusa a navegação e direciona para a página naoautorizado
     } else {
       request.getRequestDispatcher("/login").forward(request, response);
-      return; //direciona para o login
+      return; // direciona para o login
     }
   }
 
