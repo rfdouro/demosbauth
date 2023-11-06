@@ -29,10 +29,13 @@ public class TarefaController {
   return "tarefa/index";
  }
 
- @PostMapping
- public String cadastrar(String descricao) {
-  Tarefa tarefa = new Tarefa();
-  tarefa.setDescricao(descricao);
+ /*
+  * para REST o consumo padrão é JSON
+  * consumes = "application/json"
+  * aqui estamos utilizando o envio através de um FORM 
+  */
+ @PostMapping(consumes = "application/x-www-form-urlencoded")
+ public String cadastrar(Tarefa tarefa) {
   tarefaRepository.save(tarefa);
   return "redirect:/tarefa";
  }
