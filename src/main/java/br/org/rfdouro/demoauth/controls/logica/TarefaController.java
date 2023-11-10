@@ -7,8 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.org.rfdouro.demoauth.data.Usuario;
 import br.org.rfdouro.demoauth.data.logica.Tarefa;
 import br.org.rfdouro.demoauth.data.logica.TarefaRepository;
+import jakarta.servlet.http.HttpServletRequest;
+
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -24,8 +27,9 @@ public class TarefaController {
  }
 
  @GetMapping
- public String index(Model model) {
-  model.addAttribute("listaTarefas", tarefaRepository.findAll());
+ public String index(Model model, HttpServletRequest request) {
+  Usuario u = (Usuario) request.getSession().getAttribute("usuario");
+  model.addAttribute("listaTarefas", tarefaRepository.findAllByIdUsuarioOrderByDescricao(u.getId()));
   return "tarefa/index";
  }
 
@@ -35,7 +39,9 @@ public class TarefaController {
   * aqui estamos utilizando o envio através de um FORM 
   */
  @PostMapping(consumes = "application/x-www-form-urlencoded")
- public String cadastrar(Tarefa tarefa) {
+ public String cadastrar(HttpServletRequest request, Tarefa tarefa) {
+  Usuario u = (Usuario) request.getSession().getAttribute("usuario");
+  tarefa.setIdUsuario(u.getId());
   tarefaRepository.save(tarefa);
   return "redirect:/tarefa";
  }

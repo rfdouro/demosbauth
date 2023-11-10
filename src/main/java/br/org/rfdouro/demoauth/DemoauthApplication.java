@@ -41,14 +41,14 @@ public class DemoauthApplication {
 							"(NOME, PATTERN)\r\n" + //
 							"VALUES('TAREFA', '^/tarefa');\r\n" + //
 							"",
-					"INSERT INTO PUBLIC.AUTORIZACOES_FUNCIONARIOS\r\n" + //
-							"(AUTH_ID, USUARIO_ID)\r\n" + //
+					"INSERT INTO PUBLIC.AUTORIZACOES_USUARIOS\r\n" + //
+							"(AUT_ID, USUARIO_ID)\r\n" + //
 							"VALUES((SELECT ID\r\n" + //
 							"FROM PUBLIC.AUTORIZACAO WHERE NOME = 'ADMIN'), (SELECT ID\r\n" + //
 							"FROM PUBLIC.USUARIO WHERE LOGIN = 'admin'));\r\n" + //
 							"",
-					"INSERT INTO PUBLIC.AUTORIZACOES_FUNCIONARIOS\r\n" + //
-							"(AUTH_ID, USUARIO_ID)\r\n" + //
+					"INSERT INTO PUBLIC.AUTORIZACOES_USUARIOS\r\n" + //
+							"(AUT_ID, USUARIO_ID)\r\n" + //
 							"VALUES((SELECT ID\r\n" + //
 							"FROM PUBLIC.AUTORIZACAO WHERE NOME = 'TAREFA'), (SELECT ID\r\n" + //
 							"FROM PUBLIC.USUARIO WHERE LOGIN = 'usuario'));\r\n" + //

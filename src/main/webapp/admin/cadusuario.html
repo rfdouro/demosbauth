@@ -11,8 +11,8 @@
 
 <body>
  <h1>Painel Administrativo</h1>
- <a href="/admin">Página inicial - Admin</a>
- <form method="post" action="/admin/usuario/cadastro">
+ <a th:href="@{/admin}">Página inicial - Admin</a>
+ <form method="post" th:action="@{/admin/usuario/cadastro}">
   <fieldset>
    <legend>Usuário</legend>
    <p><label>Login: </label><input type="text" name="login" /></p>

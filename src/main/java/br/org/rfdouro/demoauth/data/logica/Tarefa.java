@@ -1,5 +1,6 @@
 package br.org.rfdouro.demoauth.data.logica;
 
+import br.org.rfdouro.demoauth.data.Usuario;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,6 +12,15 @@ public class Tarefa {
  @GeneratedValue(strategy = GenerationType.IDENTITY)
  private Long id;
  private String descricao;
+ private  Long idUsuario;
+
+ public Long getIdUsuario() {
+  return idUsuario;
+ }
+
+ public void setIdUsuario(Long idUsuario) {
+  this.idUsuario = idUsuario;
+ }
 
  public Long getId() {
   return id;
