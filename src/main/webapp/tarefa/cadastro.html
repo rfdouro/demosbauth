@@ -11,7 +11,7 @@
 <body>
  <a th:href="@{/tarefa}">Lista de tarefas</a>
  <h1>Tarefa - Cadastro</h1>
- <form method="post" action="/tarefa">
+ <form method="post" th:action="@{/tarefa}">
   <fieldset>
    <legend>Tarefa</legend>
    <p><label>Descrição: </label><input type="text" name="descricao" /></p>

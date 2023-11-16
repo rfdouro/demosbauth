@@ -11,15 +11,15 @@
 <body>
  <h1>Página inicial</h1>
  <ul th:if="${session.usuario!=null}">
-  <li><a href="/admin">Painel administrativo</a></li>
-  <li><a href="/tarefa">Tarefas</a></li>
+  <li><a th:href="@{/admin}">Painel administrativo</a></li>
+  <li><a th:href="@{/tarefa}">Tarefas</a></li>
  </ul>
  <div th:if="${session.usuario!=null}">
   <h2>Olá <span th:text="${session.usuario.login}"></span></h2>
-  <a href="/login/deslogar">Deslogar</a>
+  <a th:href="@{/login/deslogar}">Deslogar</a>
  </div>
  <div th:if="${session.usuario==null}">
-  <a href="/login">Logar</a>
+  <a th:href="@{/login}">Logar</a>
  </div>
 </body>
 
