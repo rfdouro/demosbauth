@@ -24,3 +24,6 @@ O projeto usa:
 
 ## Execução
 ![Execução](execucao3.gif)
+
+## Tabela com Perfis
+![Tabela com Perfis](image-2.png)
