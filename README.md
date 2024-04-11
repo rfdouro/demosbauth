@@ -6,6 +6,7 @@ O projeto usa:
 * Tabela de autorizações e usuários
 * REGEX para ter controle sobre o endpoint a ser autorizado
 * Usuário em sessão com suas respectivas autorizações
+* Esse projeto diferencia-se do https://github.com/rfdouro/demosbauth pois usa a classe Usuario como ancestral e classes herdeiras como caracterização de perfis
 
 ## Para MariaDB
 
