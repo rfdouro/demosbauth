@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset='utf-8'>
+ <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+ <title>Início</title>
+ <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+ <h1>Página inicial</h1>
+ <ul th:if="${session.usuario!=null}">
+  <li><a th:href="@{/admin}">Painel administrativo</a></li>
+  <li><a th:href="@{/tarefa}">Tarefas</a></li>
+ </ul>
+ <div th:if="${session.usuario!=null}">
+  <h2>Olá <span th:text="${session.usuario.login}"></span></h2>
+  <h3><span th:text="${@usuarioService.tipoUsuario(session.usuario)}"></span></h3>
+  <a th:href="@{/login/deslogar}">Deslogar</a>
+ </div>
+ <div th:if="${session.usuario==null}">
+  <a th:href="@{/login}">Logar</a>
+ </div>
+</body>
+
+</html>

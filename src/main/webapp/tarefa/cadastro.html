@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset='utf-8'>
+ <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+ <title>Início</title>
+ <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+ <a th:href="@{/tarefa}">Lista de tarefas</a>
+ <h1>Tarefa - Cadastro</h1>
+ <form method="post" th:action="@{/tarefa}">
+  <fieldset>
+   <legend>Tarefa</legend>
+   <p><label>Descrição: </label><input type="text" name="descricao" /></p>
+   <p><input type="submit" value="Salvar" /></p>
+  </fieldset>
+ </form>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset='utf-8'>
+ <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+ <title>Admin</title>
+ <meta name='viewport' content='width=device-width, initial-scale=1'>
+ <link rel="stylesheet" th:href="@{/css/estilo.css}" />
+</head>
+<body>
+ <h1>Painel Administrativo</h1>
+ <a th:href="@{/}">Página inicial</a>&nbsp;<a th:href="@{/admin/usuario/cadastro}">Cadastro de usuário</a>&nbsp;
+ <table style="width:100%">
+  <thead>
+   <tr><th>Id</th><th style="width:30%">Login</th><th style="width:10%">Senha</th><th width="15%">Tipo</th><th style="width:30%">Auths</th></tr>
+  </thead>
+  <tbody>
+   <tr th:each="u : ${listaUsuarios}">
+    <td th:text="${u.id}"></td><td th:text="${u.login}"></td>
+    <td th:text="${u.senha}"></td>
+    <td th:text="${@usuarioService.tipoUsuario(u)}"></td>
+    <td>
+     <ul>
+      <li th:each="a : ${u.autorizacoes}" th:text="${a.nome}"></li>
+     </ul>
+    </td>
+    <td>
+     <a th:href="@{'/admin/usuario/delete/' + ${u.id}}">Excluir</a>
+    </td>
+   </tr>
+  </tbody>
+ </table>
+</body>
+</html>

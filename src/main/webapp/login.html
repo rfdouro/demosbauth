@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Acesso</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <h1>Login</h1>
+    <fieldset>
+      <legend>Dados</legend>
+      <form method="post" th:action="@{/login}">
+        <label>Usuário</label>
+        <input type="text" name="usuario" />
+        <br />
+        <label>Senha</label>
+        <input type="password" name="senha" />
+        <br />
+        <input type="submit" value="Logar" />
+      </form>
+    </fieldset>
+    <span th:if="${mensagem!=null}" th:text="${mensagem}"></span>
+    <script th:if="${mensagem!=null}" th:inline="javascript">
+      /*<![CDATA[*/
+      var mensagem = /*[[${mensagem}]]*/ "";
+      if (mensagem != "") alert(mensagem);
+      /*]]>*/
+    </script>
+  </body>
+</html>
